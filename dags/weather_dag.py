@@ -43,7 +43,7 @@ with DAG(
         @task(task_id='push_to_s3')
         def push_to_s3(wd):
             load_object = LoadClass()
-            load_object.push_raw_data_to_s3(wd)
+            load_object.push_data_to_s3(wd,"raw")
 
         @task(task_id='insert_raw_data_to_postgres')
         def insert_raw_data_to_postgres(wd):
